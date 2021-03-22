@@ -60,17 +60,14 @@ CHALLENGE 4
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
 
-Then, write a function named `speaker` that takes in an array of strings and a callback function. 
+Then, write a function named `speaker` that takes in an array of strings and a callback function.
 
-Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
+Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
     // Solution code here...
-    let string = '';
-    string = word.toUpperCase();
-    string = `${string} !`
-    return string;
+    return word.toUpperCase() + '!';
 };
 
 const speaker = (words, callback) => {
@@ -161,10 +158,10 @@ const fizzbuzz = (arr) => {
     arr.forEach(element => {
         if (element / 3 === 0) {
             localArray.push('Fizz');
-        } else if (elemnt / 5 === 0) {
+        } else if (element / 5 === 0) {
             localArray.push('Buzz');
         } else if (element / 3 === 0 || element / 5 === 0) {
-            localArray.push('Fizz Buzz')
+            localArray.push('Fizz Buzz');
         }
         localArray.push(element);
     });
@@ -229,4 +226,5 @@ xdescribe('Testing challenge 7', () => {
         expect(fizzbuzz(inputs)).toStrictEqual([1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16]);
         expect(fizzbuzz(inputs).length).toStrictEqual(16);
     });
+    // eslint-disable-next-line eol-last
 });
