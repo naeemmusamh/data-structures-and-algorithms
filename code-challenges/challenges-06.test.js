@@ -129,7 +129,7 @@ const updateNumbers = (obj) => {
     // Solution code here...
     const newArray = [];
     for (const key in obj) {
-        const element = obj + ':' + obj[key];
+        const element = key + ':' + obj[key];
         newArray.push(element);
     }
     return newArray;
@@ -166,11 +166,20 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
     // Solution code here...
-    const values = object.value(arr[2]);
-    if (values === character) {
-        return true;
-    } else {
-        return false;
+    // let returnValue = 0;
+    // arr.forEach(element => {
+    //     if (element.name === character) {
+    //         Object.value(element)[2].length ? returnValue = true : returnValue = false;
+    //     }
+    //     return returnValue;
+    // });
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].name === character) {
+            if (Object.values(arr[i])[2].length > 0) {
+                return true;
+            }
+            return false;
+        }
     }
 };
 
