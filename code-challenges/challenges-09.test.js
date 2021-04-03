@@ -20,6 +20,11 @@ Becomes:
 
 function transformToLis(obj) {
     // Solution code here...
+    const newArray = [];
+    for (const key in obj) {
+        newArray.push(`<li>${key}: ${obj[key]}</li>`)
+    }
+    return newArray;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,9 +36,10 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
     // Solution code here...
-    let sum = arr.reduce((accumlater, value) => {
-        return accumlater += value;
-    });
+    const sum = arr.reduce((accumlater, value) => {
+        accumlater += value;
+        return accumlater;
+    }, 0);
     return sum;
 };
 
@@ -51,6 +57,11 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
     // Solution code here...
+    const purchase = arr.reduce((accumlater, value) => {
+        accumlater += value.purchasePrice;
+        return accumlater;
+    }, 0);
+    return purchase;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,6 +74,11 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
     // Solution code here...
+    const sum = arr.reduce((accumlater, value) => {
+        accumlater.length;
+        return accumlater;
+    }, 0);
+    return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,6 +141,11 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
     // Solution code here...
+    const nameArray = arr.reduce((accumlater, value) => {
+        accumlater[value.name] = value.name;
+        return accumlater;
+    }, []);
+    return nameArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -137,6 +158,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
     // Solution code here...
+    let newArray = str.split('');
+    return newArray.reduce((accumlater, value) => {
+        return value + accumlater;
+    });
 };
 
 /* ------------------------------------------------------------------------------------------------
