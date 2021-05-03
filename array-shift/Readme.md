@@ -16,4 +16,4 @@ Write a function which takes in an array and the value to be added to the middle
 
 ## Solution
 
-![whiteboard](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/array-shift/shift array.png?raw=true)
+![whiteboard](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/array-shift/shift%20array.png?raw=true)
