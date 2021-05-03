@@ -17,4 +17,4 @@ make funaction that take an array of (number, text) and reverse this array.
 
 ## Solution
 
-[whiteboard](/image/reverse-challenge.png)
+![whiteboard](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/code-callenge-01/image/reverse-challenge.png?raw=true)

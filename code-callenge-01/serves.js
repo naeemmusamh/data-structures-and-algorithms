@@ -1,11 +1,11 @@
 'use strict';
 
-function reverseArray(arr){
-  let newArray=[];
-  for(let x=arr.length-1; x>=0; x--){
-    newArray.push(arr[i]);
-  }
-  return newArray;
+function reverseArray(arr) {
+    let newArray = [];
+    for (let x = arr.length - 1; x >= 0; x--) {
+        newArray.push(arr[i]);
+    }
+    return newArray;
 }
 console.log(reverseArray([1, 2, 3, 4, 5, 6]));
 console.log(reverseArray([89, 2354, 3546, 23, 10, -923, 823, -12]));
