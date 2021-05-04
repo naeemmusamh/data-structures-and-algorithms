@@ -17,7 +17,7 @@ Without utilizing any of the built-in methods available to your language, return
 
 ## Solution
 
-![whiteboard](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/array-shift/shift%20array.png?raw=true)
+![whiteboard](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/array-binary-search/binary%20array.png?raw=true)
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
