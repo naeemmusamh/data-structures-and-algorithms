@@ -11,10 +11,21 @@ make funaction that take an array of (number, text) and reverse this array.
 
 1. make new variable and this variable take an array.
 
-2. make for loop to loop through this array and decreace the lenghth for the array.
+2. make for loop to loop through this array and decrease the length for the array.
 
 3. make new method .push() to push the result inside the array after loop and reverse it.
 
 ## Solution
 
 ![whiteboard](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/code-callenge-01/image/reverse-challenge.png?raw=true)
+
+ - [x] Top-level README “Table of Contents” is updated
+ - [x] Feature tasks for this challenge are completed
+ - [x] Unit tests written and passing
+     - [x] “Happy Path” - Expected outcome
+     - [x] Expected failure
+     - [x] Edge Case (if applicable/obvious)
+ - [x] README for this challenge is complete
+     - [x] Summary, Description, Approach & Efficiency, Solution
+     - [x] Link to code
+     - [x] Picture of whiteboard
