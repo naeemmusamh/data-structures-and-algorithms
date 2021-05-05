@@ -240,21 +240,21 @@ describe('Testing challenge 5', () => {
     });
 });
 
-// describe('Testing challenge 6', () => {
-//     let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
+describe('Testing challenge 6', () => {
+    let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
-//     test('It should return the cities whose names begin with the letters A through J', () => {
-//         expect(citiesAtoJ(cities)).toContain('Cleveland', 'Birmingham', 'Austin', 'Boston', 'Hoboken');
-//         expect(citiesAtoJ(cities).length).toStrictEqual(5);
+    test('It should return the cities whose names begin with the letters A through J', () => {
+        expect(citiesAtoJ(cities)).toContain('Cleveland', 'Birmingham', 'Austin', 'Boston', 'Hoboken');
+        expect(citiesAtoJ(cities).length).toStrictEqual(5);
 
-//         expect(citiesAtoJ([])).toStrictEqual([]);
-//         expect(citiesAtoJ(['Albuquerque', 'Chicago', 'Philadelphia', 'Newark', 'Sacramento', 'Eugene'])).toEqual(expect.arrayContaining(['Albuquerque', 'Chicago', 'Eugene']));
-//     });
+        expect(citiesAtoJ([])).toStrictEqual([]);
+        expect(citiesAtoJ(['Albuquerque', 'Chicago', 'Philadelphia', 'Newark', 'Sacramento', 'Eugene'])).toEqual(expect.arrayContaining(['Albuquerque', 'Chicago', 'Eugene']));
+    });
 
-//     test('It should not return the cities whose names begin with the letters K through Z', () => {
-//         expect(citiesAtoJ(cities)).not.toContain('San Diego', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Newport Beach');
-//     });
-// });
+    test('It should not return the cities whose names begin with the letters K through Z', () => {
+        expect(citiesAtoJ(cities)).not.toContain('San Diego', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Newport Beach');
+    });
+});
 
 xdescribe('Testing challenge 7', () => {
     test('It should match any of the acceptable inputs', () => {
