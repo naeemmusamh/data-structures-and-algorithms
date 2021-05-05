@@ -74,11 +74,12 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
     // Solution code here...
-    const sum = arr.reduce((accumlater, value) => {
-        accumlater.length;
+    let number = 0;
+    let newArr = arr.reduce((accumlater, value) => {
+        number++
         return accumlater;
     }, 0);
-    return sum;
+    return number;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,11 +142,11 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
     // Solution code here...
-    const nameArray = arr.reduce((accumlater, value) => {
-        accumlater[value.name] = value.name;
-        return accumlater;
+    let newArr = arr.reduce((accumlater, value) => {
+        accumlater.push(value.name);
+        return accumlater
     }, []);
-    return nameArray;
+    return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
