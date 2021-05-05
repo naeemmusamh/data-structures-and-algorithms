@@ -65,7 +65,6 @@ const totalSum = (input) => {
     let number = 0;
     input.map(index => {
         index.map(value => number += value);
-
     })
     return number;
 };
