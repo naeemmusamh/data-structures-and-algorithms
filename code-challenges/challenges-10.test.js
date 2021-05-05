@@ -42,14 +42,12 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
     // Solution code here...
-    // let count = input.reduce((accumlater, value) => {
-    //     accumlater += value.reduce((accumlater, value) => {
-    //         accumlater += 1;
-    //         return accumlater;
-    //     }, 0);
-    //     return accumlater;
-    // }, 0);
-    // return count;
+    let number = 0;
+    let newArr = input.map(result => {
+        let integerArray = result.filter(x => x == target)
+        number += integerArray.length;
+    })
+    return number;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,14 +62,11 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
     // Solution code here...
-    // let x = 0;
-    // const sum = input.map(element => {
-    //     element.map(index => {
-    //         x += index;
-    //     });
-    //     return x;
-    // });
-    // return sum;
+    let number = 0;
+    input.map(index => {
+        index.map(value => number += value);
+    })
+    return number;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,15 +83,14 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
     // Solution code here...
-    // const divisible = input.filter((number, index) => {
-    //     if (number % 5) {
-    //         return number;
-    //     }
-    // });
-    // const power = divisible.map(result => {
-    //     return Math.pow(2, result);
-    // });
-    // return power;
+    let filterArray = input.map(index => {
+        return index.filter(value => value % 5 == 0 && typeof value == 'number')
+    });
+
+    let results = filterArray.map(result => {
+        return result.map(element => Math.pow(2, element));
+    })
+    return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -164,13 +158,16 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
     // Solution code here...
-    // let newString = data.filter(element => {
-    //     if (element.gender === 'female' || element.gender === 'male') {
-    //         return element.name;
-    //     }
-    // }).map(element =>
-    //     element.name).split('').join('and');
-    // return newString;
+    let filterArray = data.filter(x => x.gender == 'male' || x.gender == 'female');
+    let name = '';
+    for (let i = 0; i < filterArray.length; i++) {
+        if (i < filterArray.length - 1) {
+            name = name + `${filterArray[i].name} and `;
+        } else {
+            name = name + `${filterArray[i].name}`;
+        }
+    }
+    return name;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -181,6 +178,14 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
     // Solution code here...
+    let givenNumber = data[0].height;
+    let sorted = data.filter(index => {
+        if (parseInt(index.height) < parseInt(givenNumber)) {
+            givenNumber = index.height;
+        }
+        return parseInt(index.height) <= parseInt(givenNumber);
+    })
+    return sorted[sorted.length - 1].name;
 };
 
 /* ------------------------------------------------------------------------------------------------
