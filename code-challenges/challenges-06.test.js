@@ -55,11 +55,20 @@ let characters = [{
 
 const sortByChildren = (charArray) => {
     // Solution code here...
-    charArray.sort((a, b) => a.children.length - b.children.length);
-    if (a.children.length = b.children.length) {
-        charArray.house.sort();
-    }
-    return charArray;
+    characters.sort((a, b) => {
+        if (a.children.length > b.children.length) {
+            return 1
+        } else if (a.children.length < b.children.length) {
+            return -1
+        } else {
+            if (a.name > b.name) {
+                return 1
+            } else if (a.name < b.name) {
+                return -1
+            }
+        }
+    })
+    return characters;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,10 +136,10 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
     // Solution code here...
-    const newArray = [];
-    for (const key in obj) {
-        const element = key + ':' + obj[key];
-        newArray.push(element);
+    let newArray = [];
+    for (let key in obj) {
+        let data = key + ': ' + obj[key];
+        newArray.push(data);
     }
     return newArray;
 };
