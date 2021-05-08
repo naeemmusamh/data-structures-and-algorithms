@@ -16,7 +16,7 @@ Write a function which takes in an array and the value to be added to the middle
 
 ## Solution
 
-![whiteboard](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/array-shift/shift%20array.png?raw=true)
+![whiteboard](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/code-challenges401/array-binary-search/binary%20array.png?raw=true)
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
