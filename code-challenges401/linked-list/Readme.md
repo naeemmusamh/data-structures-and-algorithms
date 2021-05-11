@@ -21,7 +21,7 @@ toString which takes in no arguments and returns a string representing all the v
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 
-![linked list node]()
+![linked list node](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/code-challenges401/linked-list/linked%20list%20node.png?raw=true)
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
