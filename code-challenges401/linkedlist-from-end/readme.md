@@ -4,17 +4,13 @@ let's say we have multiple values and this value inside something call (node) an
 
 ## Challenge
 
-.append(value) which adds a new node with the given value to the end of the list
-
-.insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
-
-.insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 
-![linked list node](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/code-challenges401/linkedlist-insertions/insert%20before%20and%20after.png?raw=true)
+![linked list node]()
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
