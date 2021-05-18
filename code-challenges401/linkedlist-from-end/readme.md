@@ -10,7 +10,7 @@ a method for the Linked List class which takes a number, k, as a parameter. Retu
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 
-![linked list node]()
+![linked list node](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/code-challenges401/linkedlist-from-end/length-from-end.png?raw=true)
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
