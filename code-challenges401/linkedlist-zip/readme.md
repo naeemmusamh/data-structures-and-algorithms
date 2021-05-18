@@ -8,7 +8,7 @@ Write a function called zipLists which takes two linked lists as arguments. Zip 
 
 
 
-![linked list zip]()
+![linked list zip](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/code-challenges401/linkedlist-zip/zipLists.png?raw=true)
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
