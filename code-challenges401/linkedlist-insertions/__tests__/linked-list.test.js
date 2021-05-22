@@ -36,4 +36,22 @@ describe('test the node if the functionally work correctly', () => {
         expect(list.head.next.next.data).toEqual(headNode);
     });
 
+    it('test if i can insert a node before some node', () => {
+        const list = new node();
+        list.append(2);
+        list.append(3);
+        list.append(1);
+        list.insertBefore(3, 5);
+        expect(list.toString()).toEqual('1,5,3,2');
+    });
+
+    it('test if i can insert a node before some node', () => {
+        const list = new node();
+        list.append(2);
+        list.append(3);
+        list.append(1);
+        list.insertAfter(3, 5);
+        expect(list.toString()).toEqual('1,3,5,2');
+    });
+
 });
