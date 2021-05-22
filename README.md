@@ -23,3 +23,6 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 |array-binary-search|[array binary](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/array-binary-search)|
 |linked-list|[linked list](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/linked-list)|
 |linkedlist-insertions|[linkedlist-insertions](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/linkedlist-insertions)|
+|linkedlist-from-end|[linkedlist-from-end](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/linkedlist-from-end)|
+|linkedlist-zip|[linkedlist-zip](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/linkedlist-zip)|
+|StackandQueue|[StackandQueue](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/StackandQueue)|
