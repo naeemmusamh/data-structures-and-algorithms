@@ -27,15 +27,26 @@ class LinkedList {
         return this;
     }
 
-    insertBefore(value, newVal) {
+    toString() {
+        let current = this.head;
+        const values = [];
+        while (current) {
+            values.push(current.data);
+            current = current.next;
+        }
+        return values.join(',');
+    }
+
+
+    insertBefore(data, newVal) {
         let current = this.head;
         let previous;
-        while ((current) && (current.value !== value)) {
+        while ((current) && (current.data !== data)) {
             previous = current;
             current = current.next;
         }
         if (!current) {
-            throw `Value ${value} not found in linked list.`;
+            throw `Value ${data} not found in linked list.`;
         } else {
             const newNode = new Node(newVal);
             newNode.next = current;
@@ -47,18 +58,47 @@ class LinkedList {
         }
     }
 
-    insertAfter(value, newVal) {
+    insertAfter(data, newVal) {
         let current = this.head;
-        while ((current) && (current.value !== value)) {
+        while ((current) && (current.data !== data)) {
             current = current.next;
         }
         if (!current) {
-            throw `Value ${value} not found in linked list.`;
+            throw `Value ${data} not found in linked list.`;
         } else {
             const newNode = new Node(newVal);
             newNode.next = current.next;
             current.next = newNode;
         }
+    }
+
+    getLength() {
+        let current = this.head;
+        let length = 0;
+
+        while (current) {
+            length++;
+            current = current.next;
+        }
+        return length;
+    }
+
+    getNthNode(n) {
+        if (n < 1) {
+            throw `Method getNthNode(n) called with n less than 1.`;
+        }
+
+        let current = this.head;
+        let length = 0;
+
+        while (current) {
+            length++;
+            if (length === n) {
+                return current;
+            }
+            current = current.next;
+        }
+        throw `The linked list is shorter than ${n} nodes.`;
     }
 
     kthFromEnd(k) {
@@ -70,8 +110,22 @@ class LinkedList {
             throw `${k} is too big for the linked list length of ${length}`;
         }
         let foundNode = this.getNthNode(length - k);
-        return foundNode.value;
+        return foundNode.data;
     }
 }
+
+const list = new LinkedList();
+
+list.append(3);
+list.append(8);
+list.append(1);
+list.toString()
+list.insertBefore(8, 5);
+list.insertAfter(1, 7);
+list.toString();
+
+
+
+console.log(list.kthFromEnd(1));
 
 module.exports = LinkedList;
