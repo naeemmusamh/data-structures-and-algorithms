@@ -27,57 +27,33 @@ class LinkedList {
         return this;
     }
 
-    insertBefore(value, newVal) {
+    toString() {
         let current = this.head;
-        let previous;
-        while ((current) && (current.value !== value)) {
-            previous = current;
+        const values = [];
+        while (current) {
+            values.push(current.data);
             current = current.next;
         }
-        if (!current) {
-            throw `Value ${value} not found in linked list.`;
-        } else {
-            const newNode = new Node(newVal);
-            newNode.next = current;
-            if (current === this.head) {
-                this.head = newNode;
-            } else {
-                previous.next = newNode;
-            }
-        }
+        return values.join(',');
     }
 
-    insertAfter(value, newVal) {
-        let current = this.head;
-        while ((current) && (current.value !== value)) {
-            current = current.next;
-        }
-        if (!current) {
-            throw `Value ${value} not found in linked list.`;
-        } else {
-            const newNode = new Node(newVal);
-            newNode.next = current.next;
-            current.next = newNode;
-        }
+    zippedList(firstNode, secondNode) {
+        var arr = [];
+        for (var key in firstNode)
+            arr.push([firstNode[key], secondNode[key]]);
+        return arr;
     }
 
 }
 
-const zippedLists = (node1, node2) => {
-    let current = node1.head;
-    let alternate = node2.head;
+const list = new LinkedList();
 
-    if (!current) {
-        node1.head = node2.head;
-    } else {
-        while (alternate) {
-            let list = current.next;
-            current.next = alternate;
-            alternate = list;
-            current = current.next;
-        }
-    }
-    return node1;
-};
+list.append(3);
+list.append(2);
+list.append(1);
 
-module.exports = LinkedList, zippedLists;
+list.toString();
+
+console.log(list.zippedList([1, 3, 2], [5, 9, 4]));
+
+module.exports = LinkedList;
