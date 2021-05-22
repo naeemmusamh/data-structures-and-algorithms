@@ -27,15 +27,25 @@ class LinkedList {
         return this;
     }
 
-    insertBefore(value, newVal) {
+    toString() {
+        let current = this.head;
+        const values = [];
+        while (current) {
+            values.push(current.data);
+            current = current.next;
+        }
+        return values.join(',');
+    }
+
+    insertBefore(data, newVal) {
         let current = this.head;
         let previous;
-        while ((current) && (current.value !== value)) {
+        while ((current) && (current.data !== data)) {
             previous = current;
             current = current.next;
         }
         if (!current) {
-            throw `Value ${value} not found in linked list.`;
+            throw `Value ${data} not found in linked list.`;
         } else {
             const newNode = new Node(newVal);
             newNode.next = current;
@@ -47,13 +57,13 @@ class LinkedList {
         }
     }
 
-    insertAfter(value, newVal) {
+    insertAfter(data, newVal) {
         let current = this.head;
-        while ((current) && (current.value !== value)) {
+        while ((current) && (current.data !== data)) {
             current = current.next;
         }
         if (!current) {
-            throw `Value ${value} not found in linked list.`;
+            throw `Value ${data} not found in linked list.`;
         } else {
             const newNode = new Node(newVal);
             newNode.next = current.next;
@@ -61,4 +71,20 @@ class LinkedList {
         }
     }
 }
+
+const list = new LinkedList();
+
+list.append(2);
+list.append(3);
+list.append(1);
+
+//---------insert before number 3----------
+list.insertBefore(3, 5);
+
+
+//---------insert after number 3------------
+list.insertAfter(3, 9);
+
+console.log(list.toString());
+
 module.exports = LinkedList;
