@@ -31,15 +31,13 @@ the amount of data must be specified at the beginning, mean it will add every ne
 8. Define a method called peek that does not take an argument and returns the value of the node located in the front of the queue, without removing it from the queue.
 
 
-![stack linked list]()
+![stack linked list](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/code-challenges401/StackandQueue/stack%20linked%20list.png?raw=true)
 
 
-![queue linked list]()
+![queue linked list](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/code-challenges401/StackandQueue/queue%20linked%20list.png?raw=true)
 
 
 
-
-![linked list zip]()
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
