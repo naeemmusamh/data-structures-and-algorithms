@@ -22,7 +22,7 @@ Create a brand new PseudoQueue class. internally only utilize 2 Stack objects. E
 
 
 
-![]()
+![](https://github.com/naeemmusamh/data-structures-and-algorithms/blob/master/code-challenges401/queue-with-stacks/queueandstack.png?raw=true)
 
 
 
