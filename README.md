@@ -18,11 +18,13 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 |method name|link|
 |----|----|
-|array-shift|[array shift](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/array-shift)|
-|array-reverse|[array reverse](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/array-reverse)|
-|array-binary-search|[array binary](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/array-binary-search)|
-|linked-list|[linked list](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/linked-list)|
-|linkedlist-insertions|[linkedlist-insertions](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/linkedlist-insertions)|
-|linkedlist-from-end|[linkedlist-from-end](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/linkedlist-from-end)|
-|linkedlist-zip|[linkedlist-zip](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/linkedlist-zip)|
-|StackandQueue|[StackandQueue](https://github.com/naeemmusamh/data-structures-and-algorithms/tree/master/code-challenges401/StackandQueue)|
+|array-shift|[array shift](./code-challenges401/array-shift/Readme.md)|
+|array-reverse|[array reverse](./code-challenges401/array-reverse/Readme.md)|
+|array-binary-search|[array binary](./code-challenges401/array-binary-search/Readme.md)|
+|linked-list|[linked list](./code-challenges401/linked-list/Readme.md)|
+|linkedlist-insertions|[linkedlist-insertions](./code-challenges401/linkedlist-insertions/Readme.md)|
+|linkedlist-from-end|[linkedlist-from-end](./code-challenges401/linkedlist-from-end/readme.md)|
+|linkedlist-zip|[linkedlist-zip](./code-challenges401/linkedlist-zip/readme.md)|
+|StackandQueue|[StackandQueue](./code-challenges401/StackandQueue/README.md)|
+|queue-with-stacks|[queue-with-stacks](./code-challenges401/queue-with-stacks/README.md)|
+|fifo-animal-shelter|[fifo-animal-shelter](./code-challenges401/fifo-animal-shelter/README.md)|
