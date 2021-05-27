@@ -14,8 +14,7 @@ Your function should take a string as its only argument, and should return a boo
 
 
 
-![multi-bracket-validation](./string%20as%20its%20only%20argument.png)
-
+![multi-bracket-validation](./multi-bracket.png)
 
 
  - [x] Top-level README “Table of Contents” is updated
