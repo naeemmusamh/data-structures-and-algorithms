@@ -28,3 +28,7 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 |StackandQueue|[StackandQueue](./code-challenges401/StackandQueue/README.md)|
 |queue-with-stacks|[queue-with-stacks](./code-challenges401/queue-with-stacks/README.md)|
 |fifo-animal-shelter|[fifo-animal-shelter](./code-challenges401/fifo-animal-shelter/README.md)|
+|multi-bracket-validation|[multi-bracket-validation](./code-challenges401/multi-bracket-validation/Readme.md)|
+|binary-search-tree|[binary-search-tree](./code-challenges401/BinarySearchTree/README.md)|
+|find-maximum-tree|[find-maximum-tree](./code-challenges401/find-maximum-tree/README.md)|
+|traversal-tree|[traversal-tree](./code-challenges401/traversal-tree/Readme.md)|
