@@ -8,7 +8,7 @@ write function that take an array of number and traverses it from the minimum to
 
 ## Approach & Efficiency
 
-![insertion-sort](./Sort.png)
+![insertion-sort](./merge.png)
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
