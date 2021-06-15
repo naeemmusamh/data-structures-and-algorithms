@@ -32,3 +32,8 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 |binary-search-tree|[binary-search-tree](./code-challenges401/BinarySearchTree/README.md)|
 |find-maximum-tree|[find-maximum-tree](./code-challenges401/find-maximum-tree/README.md)|
 |traversal-tree|[traversal-tree](./code-challenges401/traversal-tree/Readme.md)|
+|insertion-sort|[insertion-sort](./code-challenges401/insertion-sort/Readme.md)|
+|mergesort|[mergesort](./code-challenges401/mergesort/Readme.md)|
+|QuickSort|[QuickSort](./code-challenges401/QuickSort/Readme.md)|
+|zigzag|i will do it soon|
+|FizzBuzz|i will do it soon|
