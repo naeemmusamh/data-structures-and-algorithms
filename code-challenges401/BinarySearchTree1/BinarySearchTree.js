@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-constant-condition */
 const treeify = require('treeify');
 
@@ -255,29 +256,34 @@ class BinarySearchTree{
     }
 
     zigzag(){
-        let result = [];
-        let traverse = (node, level)=>{
-            if(!node){
-                return;
-            }
-            if(result[level]){
-                result[level].push(node.value);
-            }else{
-                result[level] = [node.value];
+        let array = [];
+        let queue = [];
+
+        if(!this.root){
+            return [];
+        }
+
+        queue.push([this.root,0,true]);
+
+        while(queue.length){
+            let [node,index,shift] = queue.shift();
+            if(array.length <= index){
+                array.push([]);
             }
 
-            traverse(node.left, level + 1);
-            traverse(node.right, level + 1);
-        };
-
-        traverse(this.root, 0);
-        result.map((bucket, index)=>{
-            if(index % 2){
-                return bucket.reverse();
+            if(!shift){
+                array[index].unshift(node.value);
             }else{
-                return bucket;
+                array[index].push(node.value);
             }
-        });
+            if(node.left){
+                queue.push([node.left,index + 1, !shift]);
+            }
+            if(node.right){
+                queue.push([node.right, index + 1, !shift]);
+            }
+        }
+        return array;
     }
 
     maxDepth(){
@@ -339,8 +345,8 @@ class BinarySearchTree{
         let left = this.getHight(node.left);
         let right = this.getHight(node.right);
 
-        if(left === -1 || right === -1 || Math.abs(left - right) > 1){
-            return -1
+        if(left === - 1 || right === - 1 || Math.abs(left - right) > 1){
+            return - 1 ;
         }
 
         return Math.max(left, right) + 1;
@@ -383,8 +389,90 @@ class BinarySearchTree{
         return j + 1;
     }
 
+    //print the longest path from the root to leaf
+    longestPath(node = this.root){
+
+        if (node === null){
+            return [];
+        }
+
+        let right = this.longestPath(node.right);
+
+
+        let left = this.longestPath(node.left);
+
+        if (right.length < left.length){
+            left.push(node.value);
+        }else{
+            right.push(node.value);
+        }
+
+        let result = ()=>{
+            if(left.length > right.length){
+                return left;
+            }else{
+                return right;
+            }
+        };
+
+        return result();
+    }
+
+    //find the max path in the tree
+    maxPathSum(node = this.root){
+        let max = {value: -Infinity};
+
+        this.maxChild(node, max);
+        return max.value;
+    }
+
+    maxChild(node, max){
+        let branchMax = 0;
+
+        if(!node){
+            branchMax = 0;
+        }else{
+            branchMax = node.value;
+        }
+
+        let left = 0;
+
+        if(node.left){
+            left = Math.max(this.maxChild(node.left, max), 0);
+        }
+
+        let right = 0;
+
+        if(node.right){
+            right = Math.max(this.maxChild(node.right, max), 0);
+        }
+
+        max.value = Math.max(left+branchMax, left+branchMax+right, max.value);
+
+        branchMax = Math.max(left+branchMax, right+branchMax);
+
+        return branchMax;
+    }
+
 }
 
 let list = new BinarySearchTree();
+
+list.insertBST(15);
+list.insertBST(10);
+list.insertBST(20);
+list.insertBST(8);
+list.insertBST(12);
+list.insertBST(5);
+list.insertBST(18);
+list.insertBST(30);
+
+console.log('zigzag method', list.zigzag());
+
+console.log('the', list.SearchForValue([15,20,10,8,18,30,5], 9));
+
+console.log('print the longest path', list.longestPath());
+
+console.log('the sum of maximum path', list.maxPathSum());
 
 console.log(treeify.asTree(list, true));
