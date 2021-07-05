@@ -15,6 +15,7 @@ class BinarySearchTree{
         this.root = null;
     }
 
+    //insert the Binary Search Tree
     insertBST(value){
         let newNode = new Node(value);
         if(this.root === null){
@@ -42,6 +43,7 @@ class BinarySearchTree{
         }
     }
 
+    //insert Binary Tree
     insertArray(array){
         if(array.length === 0){
             return null;
@@ -63,6 +65,7 @@ class BinarySearchTree{
         return root;
     }
 
+    //found the max value in Binary Search Tree
     maximumValueBST(){
         let current = this.root;
         while(current.right){
@@ -71,6 +74,7 @@ class BinarySearchTree{
         return current.value;
     }
 
+    //Fond the min value in Binary Search Tree
     minimumValueBST(){
         let current = this.root;
         while(current.left){
@@ -79,6 +83,25 @@ class BinarySearchTree{
         return current.value;
     }
 
+    //find the max value in Binary Tree
+    maxValue(){
+        let result = [];
+
+        let traverse = (node)=>{
+            if(node.left){
+                traverse(node.left);
+            }
+            if(node.right){
+                traverse(node.right);
+            }
+            result.push(node.value);
+        };
+
+        traverse(this.root);
+        return Math.max(...result);
+    }
+
+    //find the second max in tree
     maximumValueBT(){
         let result = [];
         let traverse = (node)=>{
@@ -91,9 +114,11 @@ class BinarySearchTree{
             result.push(node.value);
         };
         traverse(this.root);
-        return Math.max(...result);
+        result.sort((a,b)=>a-b);
+        return result[result.length -2];
     }
 
+    //find the min value in tree
     minimumValueBT(){
         let result = [];
         let traverse = (node)=>{
@@ -109,6 +134,7 @@ class BinarySearchTree{
         return Math.min(...result);
     }
 
+    //check if the value in the tree or not
     searchValueInBS(value){
         let current = this.root;
         while(current){
@@ -124,6 +150,8 @@ class BinarySearchTree{
         return false;
     }
 
+    //remove some value from the tree if it parent it will
+    //remove the children with it
     removeValueFromBT(value){
         this.root = this.removeNode(this.root, value);
     }
@@ -153,6 +181,47 @@ class BinarySearchTree{
         }
     }
 
+    //remove parent node without the children
+    deleteNode(value){
+        this.root = this.deleteNodeHelp(this.root, value);
+    }
+
+    deleteNodeHelp(node = this.root, key){
+        if(node === null){
+            return null;
+        }
+        if(key < node.value){
+            node.left = this.deleteNodeHelp(node.left, key);
+            return node;
+        }else if(key > node.value){
+            node.right = this.deleteNodeHelp(node.right, key);
+            return node;
+        }else{
+            if(node.left === null && node.right === null){
+                node = null;
+                return node;
+            }
+            if(node.left === null){
+                node = node.left;
+                return node;
+            }
+            if(node.right === null){
+                node = node.left;
+                return node;
+            }
+
+            let currentNode = node.right;
+            while(currentNode.left !== null){
+                currentNode = currentNode.left;
+            }
+            node.value = currentNode.value;
+
+            node.right = this.deleteNodeHelp(node.right, currentNode.value);
+            return node;
+        }
+    }
+
+    //return the tree value root, parent, children
     breadthFirst(){
         let result = [];
         let current = this.root;
@@ -219,6 +288,7 @@ class BinarySearchTree{
         return result;
     }
 
+    //return the sum of tree
     totalOfTree(){
         let sum = 0;
         let result = [];
@@ -238,6 +308,7 @@ class BinarySearchTree{
         return sum;
     }
 
+    //invert tree from the left to right
     invertTree(){
         let reverseTree = (node)=>{
             if(!node){
@@ -454,6 +525,62 @@ class BinarySearchTree{
         return branchMax;
     }
 
+    //print the leaf in the binary tree
+    leafTree(node = this.root){
+        let result = [];
+
+        if(node === null){
+            return;
+        }
+
+        if(node.left === null && node.right === null){
+            //console.log('the leaf node in the tree is', node.value + '');
+            result.push(node.value);
+            console.log('the leaf in the tree is', result);
+            return result;
+        }
+
+        if(node.left !== null){
+            this.leafTree(node.left);
+        }
+
+        if(node.right !== null){
+            this.leafTree(node.right);
+        }
+
+        return result;
+    }
+
+    //check if the binary search tree is valid or not
+    validTree(){
+        let data = [];
+
+        let traverse = (node)=>{
+            if(node.left){
+                traverse(node.value);
+            }
+
+            data.push(node.value);
+
+            if(node.right){
+                traverse(node.right);
+            }
+    };
+
+        traverse(this.root);
+
+        let isValid = true;
+        for(let x = 1; x < data.length; x++){
+            if(data[x - 1] >= data[x]){
+                isValid = false;
+                break;
+            }
+        }
+
+        return isValid;
+
+    }
+
 }
 
 let list = new BinarySearchTree();
@@ -467,12 +594,24 @@ list.insertBST(5);
 list.insertBST(18);
 list.insertBST(30);
 
-console.log('zigzag method', list.zigzag());
+//console.log('zigzag method', list.zigzag());
 
-console.log('the', list.SearchForValue([15,20,10,8,18,30,5], 9));
+//console.log('the', list.SearchForValue([15,20,10,8,18,30,5], 9));
 
-console.log('print the longest path', list.longestPath());
+//console.log('print the longest path', list.longestPath());
 
-console.log('the sum of maximum path', list.maxPathSum());
+//console.log('the sum of maximum path', list.maxPathSum());
+
+//console.log('is the binary tree valid', list.validTree());
+
+//console.log('the second max number in tree', list.maximumValueBT());
+
+//list.removeValueFromBT(15);
+
+console.log(list.SearchForValue([15,10,20,8,12,18,30], 18));
+
+//list.deleteNode(20);
+
+//list.leafTree();
 
 console.log(treeify.asTree(list, true));
