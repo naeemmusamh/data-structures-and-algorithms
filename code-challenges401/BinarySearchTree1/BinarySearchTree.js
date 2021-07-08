@@ -581,6 +581,93 @@ class BinarySearchTree{
 
     }
 
+    //merge two tree and return one tree
+    mergeTree(tree1, tree2){
+        if(!tree1 || !tree){
+            return tree1 || tree2;
+        }
+
+        tree1.value += tree2.value;
+
+        tree1.left = mergeTree(tree1.left, tree2.left);
+        tree1.right = mergeTree(tree1.right, tree2.right);
+
+        return tree1;
+    }
+
+    //check if the tree have the same value mirror
+    symmetricTree(node = this .root){
+        if(!node){
+            return true;
+        }
+
+        let traverse = (node1, node2)=>{
+            if(!node1 && !node2){
+                return true;
+            }
+
+            if(!node1 || !node2){
+                return false;
+            }
+
+            if(node1.value !== node2.value){
+                return false;
+            }
+
+             return traverse(node1.left, node2.right) && traverse(node1.right, node2.left);
+        };
+
+        return traverse(node.left, node.right);
+    }
+
+    //sum all the left node in the tree
+    sumAllLift(node = this.root){
+        let sum = 0;
+
+        if(node === null){
+            return sum;
+        }
+
+        if(node.left === null && node.right === null){
+            return sum;
+        }else{
+            sum += node.left.value;
+        }
+
+        this.sumAllLift(node.left);
+
+        this.sumAllLift(node.right);
+
+        return sum;
+    }
+
+    //sum path
+    sumPath(node = this.root, target){
+        if(node === null){
+            return false;
+        }
+
+        if(target === node.value && node.left === null && node.right === null){
+            return true;
+        }
+
+        return this.sumPath(node.left, target - node.value) || this.sumPath(node.right, target - node.value);
+    }
+
+    //check if the two tree is the same
+    sameTree(tree1, tree2){
+        if(tree1 === null || tree2 === null){
+            return tree1 === tree2;
+        }
+
+        if(tree1.value !== tree2.value){
+            return false;
+        }
+
+        return this.sameTree(tree1.right, tree2.right) && this.sameTree(tree1.left, tree2.left);
+    }
+    
+
 }
 
 let list = new BinarySearchTree();
@@ -608,7 +695,13 @@ list.insertBST(30);
 
 //list.removeValueFromBT(15);
 
-console.log(list.SearchForValue([15,10,20,8,12,18,30], 18));
+//console.log('is the tree symmetric', list.symmetricTree());
+
+//console.log('sum all the left node in the tree', list.sumAllLift());
+
+//console.log('the sum in the tree or not', list.sumPath(this.root, 38));
+
+//console.log(list.SearchForValue([15,10,20,8,12,18,30], 18));
 
 //list.deleteNode(20);
 
